@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lily Script One|Raleway">
+	<link rel="stylesheet" type="text/css" href="./sandwichwebsite.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="./sandwichwebsite.js"></script>
+</head>
+
+<body>
+	<div id="bodyContent">
+		<div id="title">
+			<img id="topPicture" src="TopPicture.jpg">
+			<h1 id="titleText">Conference Sandwiches</h1>
+		</div>
+
+		<div id="login">
+		<form>
+		Username:<br>
+		<input type="text" name="username" id="username">
+		<br>
+		Password:<br>
+		<input type="password" name="password" id="password">
+		<br>
+		<button type="button" id="submit">Login</button>
+		<button type="button" id="newUser" >New User</button>
+		</form>
+		</div>
+
+		<div id="register" style="display:none">
+		<form>
+		First name:<br>
+		<input type="text" name="firstname" id="firstnameForm">
+		<br>
+		Last name:<br>
+		<input type="text" name="lastname" id="lastnameForm">
+		<br>
+		Username:<br>
+		<input type="text" name="userNameForm" id="userNameForm">
+		<br>
+		Password:<br>
+		<input type="password" name="passwordForm" id="passwordForm">
+		<br>
+		E-mail:<br>
+		<input type="text" name="email" id="emailForm">
+		<br>
+		<button type="button" id="persistNewUser">Register</button>
+		<button type="button" id="cancelNewUser" >Cancel</button>
+		</form>
+		</div>
+
+		<div id="userSelectionTabs" style="display:none">
+				<ul class="tabs">
+					<li class="tab-link" data-tab="tab-1"><span>Conferences</span></li>
+					<li class="tab-link" data-tab="tab-2"><span>Placed Orders</span></li>
+					<li class="tab-link" data-tab="tab-3"><span>Order History</span></li>
+					<li class="logout" data-tab="logout"><span>Logout</span></li>
+
+				</ul>
+		</div>
+
+		<div id="tab-1" class="tab-content">
+		
+		<div id="searchBar">
+		<input type="text" name="searchConf" id="searchConfName" placeholder="Conference">
+		<input type="text" name="searchLoc" id="searchLocation" placeholder="Location">
+		<button type="button" id="search">Search</button>
+		<br>
+		<br>
+		<br>
+		</div>
+		
+		<div id="conferenceResponse"><span>
+		<table id ='conferencesPopulated'>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Location</th>
+				<th>Datetime</th>
+				<th style='display:none'></th>
+			</tr>
+
+			<tr>
+				<td><button type='button' id ='buttonTableConference'>Select</button></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td style='display:none'></td>
+			</tr>
+		</table>
+
+		</span></div>
+
+		</div>
+
+		<div id="tab-3" class="tab-content">
+		<div id="choicesResponse"><span>Choices</span></div>
+		</div>
+
+		<div id="tab-2" class="tab-content">
+		<div id="ordersResponse"><span>Orders</span></div>
+		</div>
+		
+		<div id="userOrderList" style="display:none">
+		<div id="userOrderResponse"><span>User Orders</span></div>
+		<button type="button" id="cancelChangeOrder" >Go back</button>
+		</div>
+
+		<div id="conferenceSandwichList" style="display:none">
+		<div id="sandwichconferenceResponse"><span>Sandwiches Per Conference</span></div>
+		<button type="button" id="cancelSandwiches" >Go back</button>
+		</div>
+		
+		<div id="adminSelectionTabs" style="display:none">
+				<ul class="adminTabs">
+					<li class="tab-link" data-tab="admin-tab-1"><span>Conferences</span></li>
+					<li class="logout" data-tab="logout"><span>Logout</span></li>
+
+				</ul>
+		</div>
+		
+		<div id="admin-tab-1" class="tab-content">
+			<div id="conferenceResponseAdmin">
+				<span>
+					<table id ='conferencesPopulatedAdmin'>
+						<tr>
+							
+							<th>Name</th>
+							<th>Location</th>
+							<th>Datetime</th>
+							<th></th>
+							<th></th>
+							<th style='display:none'></th>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><button type='button' id ='buttonTableConferenceEdit'>Edit</button></td>
+							<td><button type='button' id ='buttonTableConferenceDelete'>Delete</button></td>
+							<td style='display:none'></td>
+						</tr>
+					</table>
+				</span>
+			</div>
+			<h2>Add a New Conference</h2>
+					<form>
+						Conference Name:<br>
+						<input type="text" name="newConferenceName" id="newConferenceName">
+						<br>
+						Conference Location:<br>
+						<input type="text" name="newConferenceLocation" id="newConferenceLocation">
+						<br>
+						Conference Date:<br>
+						<input type="text" name="newConferenceDate" id="newConferenceDate">
+						<br>
+						<button type='button' id ='buttonTableConferenceAdd'>Add</button>
+					</form>
+			
+		</div>
+		
+
+		<div id="conferenceSandwichListEdit" style="display:none">
+			<h2>Current Sandwiches for this Conference</h2>
+			<div id="sandwichconferenceResponseAdmin"><span>Sandwiches Per Conference</span></div>
+			<button type="button" id="cancelSandwichesEdit" >Go back</button>
+		</div>
+		
+	</div>
+</body>
+
+</html>
